@@ -1,0 +1,12 @@
+This is a placeholder file. You should replace the images with your own photos.
+
+For the portfolio to work properly, you'll need the following images:
+1. profile.jpg - Your profile picture for the hero section
+2. about.jpg - A picture for the About Me section
+3. university.jpg - A picture of your university/college
+4. highschool.jpg - A picture of your high school
+5. project1.jpg - An image representing your first project
+6. project2.jpg - An image representing your second project
+7. gallery1.jpg through gallery6.jpg - Images for your gallery section
+
+You can use stock photos or your own images. Make sure they are properly sized and optimized for web.
