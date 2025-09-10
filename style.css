@@ -746,67 +746,58 @@ nav ul li a:hover {
 }
 
 .skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
 }
 
 .skill-item {
-    margin-bottom: 15px;
-}
-
-.skill-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-}
-
-.skill-info span {
-    color: #e0e0e0;
-    font-weight: 500;
-    font-size: 1rem;
-}
-
-.skill-bar {
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(to right, #1e88e5, #64b5f6);
-    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(30, 136, 229, 0.15) 0%, rgba(100, 181, 246, 0.15) 100%);
+    border: 1px solid rgba(30, 136, 229, 0.3);
+    border-radius: 25px;
+    padding: 12px 20px;
+    margin: 0;
+    transition: all 0.3s ease;
     position: relative;
-    animation: skillFill 1.5s ease-in-out;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(30, 136, 229, 0.1);
 }
 
-@keyframes skillFill {
-    0% {
-        width: 0;
-    }
+.skill-item:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, rgba(30, 136, 229, 0.25) 0%, rgba(100, 181, 246, 0.25) 100%);
+    border-color: rgba(30, 136, 229, 0.5);
+    box-shadow: 0 8px 25px rgba(30, 136, 229, 0.2);
 }
 
-.skill-progress::before {
+.skill-item::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    animation: skillShine 2s infinite linear;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
 }
 
-@keyframes skillShine {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
+.skill-item:hover::before {
+    left: 100%;
 }
+
+.skill-item span {
+    color: #e0e0e0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+}
+
+/* All skill items use consistent blue theme */
 
 /* Projects Section */
 .projects {
@@ -1569,7 +1560,12 @@ footer {
     }
 
     .skills-list {
-        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .skill-item {
+        font-size: 0.9rem;
+        padding: 10px 16px;
     }
 }
 
