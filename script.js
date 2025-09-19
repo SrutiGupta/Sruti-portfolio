@@ -58,8 +58,6 @@ window.addEventListener('scroll', () => {
         }
     });
 });
-
-// Form submission handling
 const contactForm = document.getElementById('contact-form');
 
 if (contactForm) {
